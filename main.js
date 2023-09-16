@@ -3,10 +3,12 @@ let submitformButtons = document.querySelectorAll("form button[type='submit']");
 let usernameInput = document.getElementById("name");
 let usernameError = document.querySelector(".usernameError");
 let useremailInput = document.getElementById("email");
+let useremailError = document.querySelector(".useremailError");
 let usernumberInput = document.getElementById("number");
 let usernumError = document.querySelector(".usernumError");
 let sidebarNum = document.querySelectorAll(".sidebar ul li .num");
 let contents = document.querySelectorAll(".content");
+
 // &&&&&&&&&&
 let pricenums = document.querySelectorAll("n");
 let priceperiods = document.querySelectorAll("c");
@@ -21,6 +23,7 @@ let levelNames = document.querySelectorAll(".levelName");
 let levelprices = document.querySelectorAll(".levelprice n");
 
 let selectedlevel = document.querySelector(".selectedlevel");
+let levelError = document.querySelector(".levelError");
 let selectedlevelprice = document.querySelector(".selectedlevelprice n");
 let selctedperiod = document.querySelector(".selctedperiod");
 // &&&&&&&&&&
@@ -54,6 +57,7 @@ submitform.forEach((form) => {
 
 // handling pages on next step button clicked
 submitformButtons[0].addEventListener("click", function () {
+	handlingErrorMessages();
 	checkInput();
 });
 
@@ -72,6 +76,9 @@ backButtons.forEach((button) => {
 	button.addEventListener("click", () => {
 		switchto_back_Active(contents, sidebarNum);
 	});
+	button.addEventListener("click", () => {
+		levelError.classList.remove("active");
+	});
 });
 
 // functions
@@ -79,27 +86,42 @@ function checkInput() {
 	if (
 		!usernameInput.value == "" &&
 		!useremailInput.value == "" &&
-		!usernumberInput.value == ""
+		usernumberInput.value !== "" &&
+		usernumberInput.value.length === 11 &&
+		usernumberInput.value[0] === "0" &&
+		usernumberInput.value[1] === "1"
 	) {
-		// {
-		// 	if (!isNaN(usernameInput.value[0])) {
-		// 		usernameError.style.display = "block";
-		// 		console.log(usernumberInput.value.length);
-		// 	} else {
-		// 		usernameError.style.display = "none";
-		// 	}
-		// 	if (usernumberInput.value.length < 11) {
-		// 		usernumError.style.display = "block";
-		// 		console.log(usernumberInput.value.length);
-		// 	} else {
-		// 		usernumError.style.display = "none";
-		// 	}
-		// }
-		// else
+		// All conditions are met
+		usernumError.classList.remove("active");
+
 		switchto_Next_Active(sidebarNum, contents);
+	} else {
+		usernumError.classList.add("active");
+		if (usernumberInput.value === "") {
+			usernumError.innerHTML = "this field is requierd";
+		}
+		if (usernumberInput.value.length !== 11) {
+			usernumError.innerHTML =
+				"Number in Invalid, must start with 01 <br> and 11 charcter";
+
+			console.log(usernumError.innerHTML);
+		}
+		if (usernumberInput.value[0] !== "0") {
+			usernumError.innerHTML =
+				"NUmber in Invalid, must start with 01 <br> and 11 charcter";
+
+			console.log(usernumError.innerHTML);
+		}
+		if (usernumberInput.value[1] !== "1") {
+			usernumError.innerHTML =
+				"NUmber in Invalid, must start with 01 <br> and 11 charcter";
+			console.log(usernumError.innerHTML);
+		}
 	}
 }
-
+if (usernumberInput.value.length != 11) {
+	console.log(usernumberInput.value);
+}
 // handleng radio border
 radios.forEach((radio, index) => {
 	radio.addEventListener("click", () => {
@@ -118,6 +140,8 @@ function radiochecked() {
 	radios.forEach((radio) => {
 		if (radio.checked == true) {
 			end = true;
+		} else {
+			levelError.classList.add("active");
 		}
 	});
 	if (end) {
@@ -233,4 +257,29 @@ thirdNextButton.addEventListener("click", () => {
 		0
 	);
 });
-console.log(isNaN(usernameInput.value[0]));
+// handling Error Messages
+function handlingErrorMessages() {
+	if (usernameInput.value == "") {
+		usernameError.classList.add("active");
+	} else {
+		usernameError.classList.remove("active");
+	}
+	// ##
+	if (useremailInput.value == "") {
+		useremailError.classList.add("active");
+	} else {
+		useremailError.classList.remove("active");
+	}
+	// ##
+	if (usernumberInput.value == "") {
+		usernumError.classList.add("active");
+	} else {
+		if (!usernumberInput.value.length == 11) {
+			usernumError.classList.remove("active");
+			usernumError.innerHTML = "INvalid Number, Number MUST be 11 charcters";
+		} else if (usernumberInput.value[0] != 0 || usernumberInput.value[1] != 1) {
+			usernumError.classList.remove("active");
+			usernumError.innerHTML = "INvalid Number, Number MUST start with 01";
+		}
+	}
+}

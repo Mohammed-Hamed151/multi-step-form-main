@@ -12,7 +12,7 @@
 
 		<link rel="stylesheet" href="CSS/css/main.css" />
 		<link rel="stylesheet" href="CSS/css/normalize.css" />
-		<title>Document</title>
+		<title>multi-step-form-main</title>
 	</head>
 	<body>
 		<div class="container">
@@ -56,10 +56,12 @@
 						<label>Name</label>
 						<input id="name" type="text" />
 						<div class="usernameError">
-							The above field must start with letter
+							The above field can't be empty and <br />
+							must start with letter not a Number
 						</div>
 						<label>Email Address</label>
 						<input id="email" type="email" />
+						<div class="useremailError">The above field requierd</div>
 						<label>Phone Number</label>
 						<input id="number" type="number" />
 						<div class="usernumError">
@@ -82,9 +84,7 @@
 								<img src="images/icon-arcade.svg" alt="" />
 								<div>
 									<h4 class="levelName">Arcade</h4>
-									<p class="levelprice">
-										$<n>9</n>/<c>mo</c>
-									</p>
+									<p class="levelprice">$<n>9</n>/<c>mo</c></p>
 									<p class="freeMonth">2 months free</p>
 								</div>
 							</label>
@@ -93,9 +93,7 @@
 								<img src="images/icon-advanced.svg" alt="" />
 								<div>
 									<h4 class="levelName">Advanced</h4>
-									<p class="levelprice">
-										$<n>12</n>/<c>mo</c>
-									</p>
+									<p class="levelprice">$<n>12</n>/<c>mo</c></p>
 									<p class="freeMonth">2 months free</p>
 								</div>
 							</label>
@@ -104,9 +102,7 @@
 								<img src="images/icon-arcade.svg" alt="" />
 								<div>
 									<h4 class="levelName">Pro</h4>
-									<p class="levelprice">
-										$<n>15</n>/<c>mo</c>
-									</p>
+									<p class="levelprice">$<n>15</n>/<c>mo</c></p>
 									<p class="freeMonth">2 months free</p>
 								</div>
 							</label>
@@ -122,6 +118,7 @@
 							<span class="yearly">Yearly</span>
 						</div>
 					</div>
+					<div class="levelError">Please select a level</div>
 					<div class="button">
 						<button class="back">Go Back</button>
 						<button type="submit">Next Step</button>
@@ -134,44 +131,30 @@
 				<form class="three">
 					<div>
 						<label>
-							<span
-								><input type="checkbox" class="select-service"
-							/></span>
+							<span><input type="checkbox" class="select-service" /></span>
 							<span>
 								<p><b class="serviceName">Online service</b></p>
 								<p>Access to multiplayer games</p>
 							</span>
-							<span class="servicePrice"
-								>+$<n>1</n>/<c>mo</c></span
-							>
+							<span class="servicePrice">+$<n>1</n>/<c>mo</c></span>
 						</label>
 						<label>
-							<span
-								><input type="checkbox" class="select-service"
-							/></span>
+							<span><input type="checkbox" class="select-service" /></span>
 							<span>
 								<p><b class="serviceName">Larger storage</b></p>
 								<p>Extra 1TB of cloud save</p>
 							</span>
-							<span class="servicePrice"
-								>+$<n>2</n>/<c>mo</c></span
-							>
+							<span class="servicePrice">+$<n>2</n>/<c>mo</c></span>
 						</label>
 						<label>
-							<span
-								><input type="checkbox" class="select-service"
-							/></span>
+							<span><input type="checkbox" class="select-service" /></span>
 							<span>
 								<p>
-									<b class="serviceName"
-										>Customizable Profile</b
-									>
+									<b class="serviceName">Customizable Profile</b>
 								</p>
 								<p>Custom theme on your profile</p>
 							</span>
-							<span class="servicePrice"
-								>+$<n>1</n>/<c>mo</c></span
-							>
+							<span class="servicePrice">+$<n>1</n>/<c>mo</c></span>
 						</label>
 					</div>
 					<div class="button">
@@ -191,15 +174,11 @@
 								<div>
 									<h5>
 										<span class="selectedlevel"></span
-										><span class="selctedperiod"
-											>(Monthly)</span
-										>
+										><span class="selctedperiod">(Monthly)</span>
 									</h5>
 									<button class="change">Change</button>
 								</div>
-								<p class="selectedlevelprice">
-									$<n></n>/<c>mo</c>
-								</p>
+								<p class="selectedlevelprice">$<n></n>/<c>mo</c></p>
 							</div>
 							<div class="selectedservices"></div>
 						</div>
@@ -220,9 +199,9 @@
 					<img src="images/icon-thank-you.svg" alt="" />
 					<h2>Thank you!</h2>
 					<p>
-						thanks for confirming your subscription! We hope you
-						have fun using our platform. if you ever nedd support
-						please feel free to email us at support@loremgaming.com
+						thanks for confirming your subscription! We hope you have fun using
+						our platform. if you ever nedd support please feel free to email us
+						at support@loremgaming.com
 					</p>
 				</div>
 			</div>

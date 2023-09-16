@@ -24,7 +24,7 @@ body {
 	margin: 100px auto;
 	display: flex;
 	max-width: 800px;
-	max-height: 550px;
+	height: 550px;
 	background-color: white;
 	padding: 10px;
 	border-radius: 7px;
@@ -110,6 +110,19 @@ button.back {
 	background-color: var(--Magnolia);
 	color: var(--Cool-gray);
 }
+.usernameError,
+.usernumError,
+.useremailError,
+.levelError {
+	@extend %not-active;
+}
+.usernameError.active,
+.usernumError.active,
+.useremailError.active,
+.levelError.active {
+	@extend %active;
+}
+
 .content {
 	display: none;
 	flex-direction: column;
@@ -135,6 +148,7 @@ button.back {
 		color: var(--Cool-gray);
 		letter-spacing: -0.7px;
 	}
+
 	form.one {
 		div:first-child {
 			display: flex;
@@ -155,13 +169,6 @@ button.back {
 				border-color: #ddd;
 				margin-bottom: 15px;
 				color: var(--Marine-blue);
-			}
-			.usernameError,
-			.usernumError {
-				color: red;
-				display: none;
-				margin-bottom: 5px;
-				font-size: 13px;
 			}
 		}
 	}
@@ -447,4 +454,15 @@ button.back {
 			}
 		}
 	}
+}
+%not-active {
+	color: red;
+	display: none;
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+%active {
+	display: block;
+	margin-bottom: 5px;
+	position: relative;
 }
