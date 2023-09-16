@@ -32,6 +32,11 @@ body {
   padding: 10px;
   border-radius: 7px;
 }
+@media (max-width: 787px) {
+  .container {
+    height: 100vh;
+  }
+}
 
 .sidebar {
   background-image: url("../../images/bg-sidebar-desktop.svg");
@@ -360,13 +365,18 @@ button.back {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 787px) {
+  .content .thanks {
+    padding: 50px 0;
+  }
+}
 .content .thanks img {
   width: 60px;
   margin-bottom: 15px;
 }
 .content .thanks p {
   color: var(--Cool-gray);
-  line-height: 1.4;
+  line-height: 1.9;
 }
 
 .content form.four > div > div:not(:last-child) .lastcheck, .content form.four > div > div:not(:last-child) .selectedservices p, .content form.four .Total {
@@ -408,12 +418,15 @@ button.back {
   .container .content {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     position: absolute;
-    top: 95px;
+    top: 55px;
     background-color: white;
     flex-direction: column;
     padding: 20px;
     width: 90%;
     border-radius: 7px;
+  }
+  .container .content h1 {
+    padding: 0;
   }
   .container .content form {
     position: relative;
@@ -422,6 +435,7 @@ button.back {
     flex-direction: column;
   }
   .container .content form .level label {
+    padding: 10px;
     display: flex;
     align-items: center;
     width: 100%;

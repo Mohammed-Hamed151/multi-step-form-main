@@ -25,6 +25,9 @@ body {
 	display: flex;
 	max-width: 800px;
 	height: 550px;
+	@media (max-width: 787px) {
+		height: 100vh;
+	}
 	background-color: white;
 	padding: 10px;
 	border-radius: 7px;
@@ -371,13 +374,16 @@ button.back {
 		text-align: center;
 		align-items: center;
 		justify-content: center;
+		@media (max-width: 787px) {
+			padding: 50px 0;
+		}
 		img {
 			width: 60px;
 			margin-bottom: 15px;
 		}
 		p {
 			color: var(--Cool-gray);
-			line-height: 1.4;
+			line-height: 1.9;
 		}
 	}
 }
@@ -419,17 +425,21 @@ button.back {
 		.content {
 			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 			position: absolute;
-			top: 95px;
+			top: 55px;
 			background-color: white;
 			flex-direction: column;
 			padding: 20px;
 			width: 90%;
 			border-radius: 7px;
+			h1 {
+				padding: 0;
+			}
 			form {
 				position: relative;
 				.level {
 					flex-direction: column;
 					label {
+						padding: 10px;
 						img {
 							display: block;
 							margin: 0;
