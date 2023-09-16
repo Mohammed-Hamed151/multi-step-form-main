@@ -389,7 +389,7 @@ button.back {
 .content.active {
 	display: flex;
 }
-@media (max-width: 375px) {
+@media (max-width: 767px) {
 	.container {
 		background-color: var(--Light-blue);
 		margin: 0;
