@@ -294,15 +294,15 @@ button.back {
   padding: 10px;
   border-radius: 7px;
 }
-.content form.three label span:nth-child(2) {
+.content form.three label > span:nth-child(2) {
   margin-left: 10px;
   flex-basis: 90%;
 }
-.content form.three label span:nth-child(2) p:first-child {
+.content form.three label > span:nth-child(2) p:first-child {
   color: var(--Marine-blue);
   margin-bottom: 5px;
 }
-.content form.three label span:nth-child(2) p:last-child {
+.content form.three label > span:nth-child(2) p:last-child {
   color: var(--Cool-gray);
 }
 .content form.three label span:last-child {
@@ -347,7 +347,7 @@ button.back {
 .content form.four .Total {
   padding: 20px 15px;
 }
-.content form.four .Total span:first-child {
+.content form.four .Total > span:first-child {
   color: var(--Cool-gray);
 }
 .content form.four .Total span:last-child {

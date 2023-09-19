@@ -1,44 +1,48 @@
-let submitform = document.querySelectorAll("form");
-let submitformButtons = document.querySelectorAll("form button[type='submit']");
-let usernameInput = document.getElementById("name");
-let usernameError = document.querySelector(".usernameError");
-let useremailInput = document.getElementById("email");
-let useremailError = document.querySelector(".useremailError");
-let usernumberInput = document.getElementById("number");
-let usernumError = document.querySelector(".usernumError");
-let sidebarNum = document.querySelectorAll(".sidebar ul li .num");
-let contents = document.querySelectorAll(".content");
+const submitform = document.querySelectorAll("form");
+const submitformButtons = document.querySelectorAll(
+	"form button[type='submit']"
+);
+const usernameInput = document.getElementById("name");
+const usernameError = document.querySelector(".usernameError");
+const useremailInput = document.getElementById("email");
+const useremailError = document.querySelector(".useremailError");
+const usernumberInput = document.getElementById("number");
+const usernumError = document.querySelector(".usernumError");
+const sidebarNum = document.querySelectorAll(".sidebar ul li .num");
+const contents = document.querySelectorAll(".content");
 
 // &&&&&&&&&&
-let pricenums = document.querySelectorAll("n");
-let priceperiods = document.querySelectorAll("c");
-let pricePerperiod = document.querySelector(".content .payment .switch input");
-let monthly = document.querySelector(".monthly");
-let yearly = document.querySelector(".yearly");
-let freeMonths = document.querySelectorAll(".freeMonth");
-let totalper = document.querySelector("v");
-let lastcheckednums = document.querySelectorAll(".four div:first-child n");
-let totalnum = document.querySelector(".Total n");
-let levelNames = document.querySelectorAll(".levelName");
-let levelprices = document.querySelectorAll(".levelprice n");
+const pricenums = document.querySelectorAll(".n");
+const priceperiods = document.querySelectorAll(".c");
+const pricePerperiod = document.querySelector(
+	".content .payment .switch input"
+);
+const monthly = document.querySelector(".monthly");
+const yearly = document.querySelector(".yearly");
+const freeMonths = document.querySelectorAll(".freeMonth");
+const totalper = document.querySelector("v");
+const lastcheckednums = document.querySelectorAll(".four div:first-child .n");
+const totalnum = document.querySelector(".Total .n");
+const levelNames = document.querySelectorAll(".levelName");
+const levelprices = document.querySelectorAll(".levelprice .n");
 
-let selectedlevel = document.querySelector(".selectedlevel");
-let levelError = document.querySelector(".levelError");
-let selectedlevelprice = document.querySelector(".selectedlevelprice n");
-let selctedperiod = document.querySelector(".selctedperiod");
+const selectedlevel = document.querySelector(".selectedlevel");
+const levelError = document.querySelector(".levelError");
+const selectedlevelprice = document.querySelector(".selectedlevelprice .n");
+const selctedperiod = document.querySelector(".selctedperiod");
 // &&&&&&&&&&
-let selectServices = document.querySelectorAll(".select-service");
-let selectedservicesdiv = document.querySelector(".selectedservices");
-let servicesNames = document.querySelectorAll(".serviceName");
-let servicePricescontainer = document.querySelectorAll(".servicePrice");
-let servicePricescontainerNum = document.querySelectorAll(".servicePrice n");
-let thirdNextButton = document.querySelector(".three button[type='submit']");
-let secondNextButton = document.querySelector(".two button[type='submit']");
+const selectServices = document.querySelectorAll(".select-service");
+const selectedservicesdiv = document.querySelector(".selectedservices");
+const servicesNames = document.querySelectorAll(".serviceName");
+const servicePricescontainer = document.querySelectorAll(".servicePrice");
+const servicePricescontainerNum = document.querySelectorAll(".servicePrice .n");
+const thirdNextButton = document.querySelector(".three button[type='submit']");
+const secondNextButton = document.querySelector(".two button[type='submit']");
 
 // &&&&&&&&&&
-let backButtons = document.querySelectorAll(".back");
-let radios = document.querySelectorAll(".content .level > label input");
-let changeButton = document.querySelector(".change ");
+const backButtons = document.querySelectorAll(".back");
+const radios = document.querySelectorAll(".content .level > label input");
+const changeButton = document.querySelector(".change ");
 // &&&&&&&&&&
 buttonDiv = document.querySelector(".button");
 let counter = 0;

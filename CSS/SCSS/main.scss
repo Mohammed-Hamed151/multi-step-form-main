@@ -294,7 +294,7 @@ button.back {
 			cursor: pointer;
 			padding: 10px;
 			border-radius: 7px;
-			span:nth-child(2) {
+			> span:nth-child(2) {
 				margin-left: 10px;
 				flex-basis: 90%;
 				p:first-child {
@@ -355,7 +355,7 @@ button.back {
 		.Total {
 			@extend %spaceBetween;
 			padding: 20px 15px;
-			span:first-child {
+			> span:first-child {
 				color: var(--Cool-gray);
 			}
 			span:last-child {
